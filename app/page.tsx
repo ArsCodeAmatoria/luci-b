@@ -116,6 +116,22 @@ export default function Home() {
     { id: 20, image: "/images/port20.png", alt: "Additional Portfolio Work" },
   ];
 
+  // Hidden Rome items for potential later use
+  const hiddenRomeItems = [
+    { id: 21, image: "/images/port21.png", alt: "Rome Photography" },
+    { id: 22, image: "/images/port22.png", alt: "Rome Photography" },
+    { id: 23, image: "/images/port23.png", alt: "Rome Photography" },
+    { id: 24, image: "/images/port24.png", alt: "Rome Photography" },
+    { id: 25, image: "/images/port25.png", alt: "Rome Photography" },
+    { id: 26, image: "/images/port26.png", alt: "Rome Photography" },
+  ];
+  
+  // Active Rome items to display
+  const romeItems = [
+    { id: 27, image: "/images/port27.png", alt: "Rome Photography" },
+    { id: 28, image: "/images/port28.png", alt: "Rome Photography" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -280,6 +296,32 @@ export default function Home() {
                   <Card 
                     key={item.id}
                     className="bg-muted/10 border-muted/20 overflow-hidden aspect-square cursor-pointer"
+                    onClick={() => openLightbox(item.image)}
+                  >
+                    <CardContent className="p-0 h-full relative">
+                      <Image 
+                        src={item.image} 
+                        alt={item.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Rome Portfolio Items */}
+            <motion.div
+              variants={fadeIn}
+              className="space-y-8"
+            >
+              <h3 className="text-2xl font-semibold text-pink">Rome</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {romeItems.map((item) => (
+                  <Card 
+                    key={item.id}
+                    className="bg-muted/10 border-muted/20 overflow-hidden h-96 md:h-[500px] cursor-pointer"
                     onClick={() => openLightbox(item.image)}
                   >
                     <CardContent className="p-0 h-full relative">
