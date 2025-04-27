@@ -116,9 +116,6 @@ export default function Home() {
     { id: 20, image: "/images/port20.png", alt: "Additional Portfolio Work" },
   ];
 
-  // Combine all portfolio items for the lightbox
-  const allPortfolioItems = [...portfolioItems, ...featuredItems, ...additionalItems];
-
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
