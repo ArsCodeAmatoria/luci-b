@@ -117,6 +117,7 @@ export default function Home() {
   ];
 
   // Hidden Rome items for potential later use
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const hiddenRomeItems = [
     { id: 21, image: "/images/port21.png", alt: "Rome Photography" },
     { id: 22, image: "/images/port22.png", alt: "Rome Photography" },
